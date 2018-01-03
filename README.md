@@ -2,11 +2,11 @@
 
 ![ndzExplorer Screenshot](https://i.imgur.com/WeraS8l.png)
 
-##License
+## License
 
 GPL (see LICENSE)
 
-##Installation
+## Installation
 Install dependencies and include vendor scripts.
 ```
 yarn
