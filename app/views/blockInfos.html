@@ -1,0 +1,122 @@
+<div class="row page-title clearfix">
+        <div class="page-title-left">
+            <h6 class="page-title-heading mr-0 mr-r-5">Block</h6>
+            <p class="page-title-description mr-0 d-none d-md-inline-block">View information about an Nodez Block</p>
+        </div>
+        <div class="page-title-right d-inline-flex">
+            <div class="d-none d-sm-inline-flex justify-center align-items-center">
+                <a href="https://github.com/nodezcrypto/ndz-explorer" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 hidden-xs hidden-sm ripple"
+                    target="_blank">View On GitHub</a>
+            </div>
+        </div>
+    </div>
+<div class="container">
+
+    <div id="block-97785883" class="blockdiv">
+        <h3 style="padding-bottom:15px;">Block</h3>
+        <table class="table table-striped" cellpadding="0" cellspacing="0" style="padding:0px;float:left;margin:0px;width:100%">
+            <tbody>
+            <tr>
+                <th colspan="3" align="left">
+                    <a class="hash-link" href="./#/block/{{blockId}}">{{hash}}</a> 
+                    <span class="pull-right">
+                            <span class="tag label label-info " ng-class="{Unconfirmed:'bg-danger', Confirmed:'bg-success', '':'hidden'}[conf]"
+                            >{{conf}}</span>
+                            <span class="tag label label-info">{{gasUsed}} Gas Used</span>
+                    </span>
+                </th>
+            </tr>
+            </tbody>
+        </table>
+        <div style="padding-bottom:15px; padding-top:30px;clear:both">
+            <h3>Block Details</h3>
+        </div>
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <td>Block Number</td>
+                <td><a href="./#/block/{{blockNumber}}">{{number}}</a></td>
+            </tr>
+            <tr>
+                <td>Received Time</td>
+                <td>
+                    {{timestamp}}
+                </td>
+            </tr>
+            <tr>
+                <td>Difficulty</td>
+                <td>
+                    {{difficulty}}
+                </td>
+            </tr>
+            <tr>
+                <td>Nonce</td>
+                <td>{{nonce}}</td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td>{{size}}</td>
+            </tr>
+            <tr>
+                <td>Miner</td>
+                <td><a href="./#/address/{{miner}}">{{miner}}</a></td>
+            </tr>
+            <tr>
+                <td>Gas Limit</td>
+                <td>{{gasLimit}}</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>{{extraData}}</td>
+            </tr>
+
+            <tr>
+                <td>Data (Translated)</td>
+                <td>{{dataFromHex}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <h3 ng-hide="!transactions.length" style="margin-top: 30px;">
+      Transactions
+      <small>- contained in current block</small>
+    </h3>
+
+    <div ng-hide="!transactions.length" ng-model="transactions" ng-repeat="tx in transactions">
+      <table class="table table-striped">
+          <tbody>
+          <tr>
+              <th colspan="2" style="text-align:left">Transaction #{{$index+1}}</th>
+          </tr>
+          <tr>
+              <td>Hash #</td>
+              <td><a href="./#/transaction/{{tx.hash}}">{{tx.hash}}</a></td>
+          </tr>
+          <tr>
+              <td>From</td>
+              <td><a href="./#/address/{{tx.from}}">{{tx.from}}</a></td>
+          </tr>
+          <tr>
+              <td>To</td>
+              <td><a href="./#/address/{{tx.to}}">{{tx.to}}</a></td>
+          </tr>
+          <tr>
+              <td>Gas</td>
+              <td>{{tx.gas}}</a></td>
+          </tr>
+          <tr>
+              <td>Input</td>
+              <td>{{tx.input}}</a></td>
+          </tr>
+          <tr>
+              <td>Value</td>
+              <td>{{tx.value}}</a></td>
+          </tr>
+          </tbody>
+      </table>
+      <hr>
+    </div>
+
+</div>

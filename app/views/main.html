@@ -1,0 +1,152 @@
+<div class="row page-title clearfix">
+		<div class="page-title-left">
+				<h6 class="page-title-heading mr-0 mr-r-5">Explorer Dashboard</h6>
+				<p class="page-title-description mr-0 d-none d-md-inline-block">Blocks, Transactions & Stats</p>
+		</div>
+		<div class="page-title-right d-inline-flex">
+				<div class="d-none d-sm-inline-flex justify-center align-items-center">
+						<a href="https://github.com/nodezcrypto/ndz-explorer" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 hidden-xs hidden-sm ripple"
+								target="_blank">View On GitHub</a>
+				</div>
+		</div>
+</div>
+<div class="widget-list row">
+		<div class="widget-holder widget-full-content widget-full-height col-md-6">
+				<div class="widget-bg">
+						<div class="widget-body">
+								<div class="counter-gradient">
+										<h3 class="fs-60 fw-600 mt-3 pt-1 h1 letter-spacing-minus">
+												<span class="counter">{{peerCount}}</span>
+										</h3>
+										<h5 class="mb-4 fw-500">Peer Nodes</h5>
+										<p class="text-muted">Number of peers connected to explorer node.
+								</div>
+								<!-- /.widget-counter -->
+						</div>
+						<!-- /.widget-body -->
+				</div>
+				<!-- /.widget-bg -->
+		</div>
+		<!-- /.widget-holder -->
+		<!-- /.widget-holder -->
+		<div class="widget-holder widget-full-content widget-full-height col-md-6">
+		<div class="widget-holder widget-sm widget-border-radius col-md-6">
+				<div class="widget-bg">
+						<div class="widget-heading bg-purple">
+								<span class="widget-title my-0 color-white fs-12 fw-600">AVG Blocktime</span>
+								<i class="widget-heading-icon feather feather-box"></i>
+						</div>
+						<!-- /.widget-heading -->
+						<div class="widget-body">
+								<div class="counter-w-info">
+										<div class="counter-title color-color-scheme">
+												<span class="counter">{{blockTime}}</span>Secs</div>
+								</div>
+								<!-- /.counter-w-info -->
+						</div>
+						<!-- /.widget-body -->
+				</div>
+				<!-- /.widget-bg -->
+		</div>
+		<!-- /.widget-holder -->
+		<div class="widget-holder widget-sm widget-border-radius col-md-6">
+				<div class="widget-bg">
+						<div class="widget-heading bg-purple">
+								<span class="widget-title my-0 color-white fs-12 fw-600">Difficulty</span>
+								<i class="widget-heading-icon feather feather-briefcase"></i>
+						</div>
+						<!-- /.widget-heading -->
+						<div class="widget-body">
+								<div class="counter-w-info">
+										<div class="counter-title color-purple">
+												<span class="counter">{{difficulty}}</span>
+										</div>
+
+								</div>
+								<!-- /.counter-w-info -->
+						</div>
+						<!-- /.widget-body -->
+				</div>
+				<!-- /.widget-bg -->
+		</div>
+		<!-- /.widget-holder -->
+		<div class="widget-holder widget-sm widget-border-radius col-md-6">
+				<div class="widget-bg">
+						<div class="widget-heading">
+								<span class="widget-title my-0 fs-12 fw-600">Hashrate</span>
+								<i class="widget-heading-icon feather feather-zap"></i>
+						</div>
+						<!-- /.widget-heading -->
+						<div class="widget-body">
+								<div class="counter-w-info">
+										<div class="counter-title">
+												<div class="d-flex justify-content-center align-items-end">
+														<div data-toggle="circle-progress" data-start-angle="30" data-thickness="6" data-size="40" data-value="0.58" data-line-cap="round"
+																data-empty-fill="#E2E2E2" data-fill='{"gradient": ["#40E4C2", "#0087FF"], "gradientAngle": -90}'></div>
+														<span class="counter ml-3">{{hashrate}}</span>
+												</div>
+												<!-- /.d-flex -->
+										</div>
+
+								</div>
+								<!-- /.counter-w-info -->
+						</div>
+						<!-- /.widget-body -->
+				</div>
+				<!-- /.widget-bg -->
+		</div>
+		<!-- /.widget-holder -->
+		<div class="widget-holder widget-sm widget-border-radius col-md-6">
+				<div class="widget-bg">
+						<div class="widget-heading">
+								<span class="widget-title my-0 fs-12 fw-600">Blockheight</span>
+								<i class="widget-heading-icon feather feather-anchor"></i>
+						</div>
+						<!-- /.widget-heading -->
+						<div class="widget-body">
+								<div class="counter-w-info">
+										<div class="counter-title">
+												<div class="d-flex justify-content-center align-items-center">
+														<span data-toggle="sparklines" sparkheight="25" sparktype="bar" sparkchartrangemin="0"
+																sparkbarspacing="3" sparkbarcolor="#947AE8" sparkbarcolor="red">
+																<!-- 2,4,5,3,2,3,5 -->
+														</span>
+														<span class="align-bottom ml-2">
+																<span class="counter">{{blockNum}}</span>
+														</span>
+												</div>
+												<!-- /.d-flex -->
+										</div>
+
+								</div>
+								<!-- /.counter-w-info -->
+						</div>
+						<!-- /.widget-body -->
+				</div>
+				<!-- /.widget-bg -->
+		</div>
+		<!-- /.widget-holder -->
+		</div>
+</div>
+<h3>Latest Blocks</h3>
+<div class="container" style="padding-top: 15px;">
+    <table class="table table-striped" cellpadding="0" cellspacing="0" style="padding:0px;float:left;margin:0px;width:100%">
+        <tbody>
+            <tr>
+                <th>Block #</th>
+                <th>Tx #</th>
+                <th>Size</th>
+                <th>Timestamp</th>
+            </tr>
+            <tr data-ng-repeat="i in blocks">
+                <td>
+                    <a href="/#/block/{{i.number}}">{{i.number}}</a>
+                </td>
+                <td>{{i.transactions.length}}</td>
+                <td>{{i.size}}</td>
+                <td>{{i.timestamp}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

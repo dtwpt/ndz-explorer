@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="ndzExplorer" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="ndzExplorer" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="ndzExplorer" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="ndzExplorer" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NodezCrypto Block Explorer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,900,900i"
+        rel="stylesheet" type="text/css">
+    <link href="styles/feather.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="bower_components/web3/dist/web3.min.js"></script>
+
+</head>
+
+<body class="header-dark sidebar-light sidebar-expand">
+    <div id="wrapper" class="wrapper">
+        <nav class="navbar">
+            <form class="navbar-search d-none d-sm-block" name="search_form" ng-controller="mainCtrl" ng-submit="processRequest()" role="search">
+                <i class="feather feather-search list-icon"></i>
+                <input ng-model="ethRequest" name="requestType" type="search" class="search-query" placeholder="Search txid, hash, address...">
+                <a href="javascript:void(0);" class="remove-focus">
+                    <i class="material-icons">clear</i>
+                </a>
+            </form>
+            <div class="spacer"></div>
+        </nav>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!--Core-->
+        <script src="app.js"></script>
+
+        <!--Controllers-->
+        <script src="scripts/controllers/mainController.js"></script>
+        <script src="scripts/controllers/blocksController.js"></script>
+
+        <script src="scripts/controllers/addressInfoController.js"></script>
+        <script src="scripts/controllers/blockInfosController.js"></script>
+        <script src="scripts/controllers/transactionInfosController.js"></script>
+
+
+        <div class="content-wrapper">
+            <aside class="site-sidebar scrollbar-enabled" data-suppress-scroll-x="true">
+                <div class="side-user">
+                    <div class="col-sm-12 text-center p-0 clearfix">
+                        <div class="d-inline-block pos-relative mr-b-10">
+                            <figure class="thumb-sm mr-b-0">
+                                <img src="images/logo.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="lh-14 mr-t-5">
+                            <a href="/" class="hide-menu mt-3 mb-0 side-user-heading fw-500">Ndz Explorer</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul class="nav in side-menu">
+                        <li class="current-page">
+                            <a href="/#/">
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu-item-has-children active">
+                            <a href="javascript:void(0);">
+                                <span class="hide-menu">Explore</span>
+                            </a>
+                            <ul class="list-unstyled sub-menu">
+                                <li>
+                                    <a href="/#/blocks">Blocks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!---
+                        <li>
+                            <a href="/">
+                                <span>Api</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <span>Documentation</span>
+                            </a>
+                        </li>
+                        ->
+                    </ul>
+                    <!-- /.side-menu -->
+                </nav>
+                <!-- /.sidebar-nav -->
+            </aside>
+            <main class="main-wrapper clearfix">
+                <div ng-view></div>
+            </main>
+        </div>
+        <footer class="footer">
+            <span class="heading-font-family">Copyright @ 2018. All rights reserved
+                <a href="https://nodezcrypto.io">NodezCrypto</a>
+            </span>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/1.1.1/mithril.js"></script>
+
+    <script src="scripts/js/theme.js"></script>
+    <script src="scripts/js/custom.js"></script>
+</body>
+
+</html>
